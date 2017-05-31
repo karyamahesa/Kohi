@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{! Document Settings }}
+    <meta charset="UTF-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}" />
+
+    {{! Styles'n'Scripts }}
+    <!-- Font Awesome 4.3.0 -->
+    <link rel="stylesheet" type="text/css" href="{{asset "css/font-awesome.min.css"}}" />
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+
+    <!-- Custom Theme Style -->
+    <link rel="stylesheet" type="text/css" href="{{asset "css/custom.css"}}" />
+
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+    <div class="container">
+
+        <header id="header" class="row" {{#if @blog.cover}}style="background-image:url({{@blog.cover}})"{{/if}} role="banner">
+            <div class="bg-overlay"></div>
+            <div class="brand">
+                {{#if @blog.logo}}
+                <p><a href="{{@blog.url}}" title="{{@blog.title}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}"/></a></p>
+                {{else}}
+                <h1><a href="{{@blog.url}}" title="{{@blog.title}}">{{@blog.title}}</a></h1>
+                {{/if}}
+                <p>{{@blog.description}}</p>
+            </div>
+            <div class="bar">
+                <a class="search-icon" href="#"><span class="fa fa-search"></span></a>
+                <a class="menu-bar" href="#"><span></span></a>
+            </div>
+            <div class="nav-menu">
+                {{navigation}}
+            </div>
+        </header>
+
+        <aside id="widget" class="row" role="note">
+            <div class="social-media">
+                {{>social_links}}
+            </div>
+        </aside>
+
+        <main id="content" role="main">
+            {{{body}}}
+        </main>
+
+        <footer id="footer" class="row" role="contentinfo">
+            <div class="backtop">
+                <a class="backtop-link" href="#"><span class="fa fa-chevron-up"></span></a>
+            </div>
+            <div class="credits">
+                <p><a href="{{@blog.url}}">{{@blog.title}}</a> all rights reserved.<br/>Copyright &copy; 2015</p>
+            </div> 
+        </footer>
+
+        <div id="search-fullscreen">
+            <a class="close-search" href="#"><span class="fa fa-2x fa-close"></span></a>
+            <div class="search">
+                <form class="search-box">
+                    <input class="search-field" placeholder="Type to search" />
+                </form>
+                <ul class="search-result"></ul>
+            </div>
+        </div>
+
+    </div>
+    {{ghost_foot}}
+    
+    <!--Plugins jQuery-->
+    <script type="text/javascript" src="{{asset "js/jquery.ghostHunter.min.js"}}"></script>    
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+
+    <!-- The main jQuery script file for Kohi -->
+    <script type="text/javascript" src="{{asset "js/script.js"}}"></script> 
+
+</body>
+</html>

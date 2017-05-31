@@ -1,0 +1,12 @@
+{{!< default}}
+{{#tag}}
+<div class="tagpage-container">
+    <span class="inline-icon fa fa-tags"></span><h6>All posts with tag : {{name}}</h6> 
+</div>
+{{/tag}}
+<section class="post-container">
+    {{> "loop"}}
+</section>
+{{#if pagination}}
+    {{pagination}}
+{{/if}}

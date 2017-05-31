@@ -1,0 +1,12 @@
+{{!< default}}
+{{#author}}
+<div class="authorpage-container">
+	<span class="inline-icon fa fa-bookmark-o"></span><h6>All posts by author : {{name}}</h6>  
+</div>
+{{/author}}
+<section class="post-container">
+    {{> "loop"}}
+</section>
+{{#if pagination}}
+    {{pagination}}
+{{/if}}

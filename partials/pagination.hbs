@@ -1,0 +1,9 @@
+<div class="pagination-wrapper">
+	<div class="pager newer-posts">
+    	{{#if prev}}<a href="{{page_url prev}}"><span class="fa fa-long-arrow-left"></span> Newer</a>{{else}}Newer{{/if}}
+    </div>
+    <div class="pager page-number">Page {{page}} of {{pages}}</div>
+    <div class="pager older-posts">
+        {{#if next}}<a href="{{page_url next}}">Older <span class="fa fa-long-arrow-right"></span></a>{{else}}Older{{/if}}
+    </div>
+</div> 
